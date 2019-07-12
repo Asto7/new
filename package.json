@@ -25,11 +25,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Asto7/new.git"
+    "url": "git+https://github.com/Asto7/videochatasto.git"
   },
   "bugs": {
-    "url": "https://github.com/Asto7/new/issues"
+    "url": "https://github.com/Asto7/videochatasto/issues"
   },
-  "homepage": "https://github.com/Asto7/new#readme",
+  "homepage": "https://github.com/Asto7/videochatasto#readme",
   "description": ""
 }
