@@ -3,8 +3,13 @@
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
-    "start": "budo index.js:bundle.js"
+    "start": "budo index.js --serve=bundle.js",
+    "test": "eslint --no-eslintrc -c .eslintrc index.js",
+    "build" : "browserify index.js | uglifyjs -c -m > bundle.js"
+   
   },
+
+  
   "permissions": {
     "audio-capture": {
       "description": "Audio capture"
