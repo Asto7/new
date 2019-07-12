@@ -10491,7 +10491,7 @@ voice.addEventListener('click',function(){
 var getUserMedia = require('getusermedia');
 
 getUserMedia({ video: true, audio: true }, function (err, stream) {
-  if (err) return console.error(err)
+  if (err) return console.log(err)
 
   var Peer = require('simple-peer')
   var peer = new Peer({
