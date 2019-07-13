@@ -1,0 +1,41 @@
+{
+  "name": "p2p-video-chat-webrtc",
+  "version": "0.1.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "watch": "npx watchify ./public/index.js -o ./public/bundle.js",
+    "postinstall":"npm run watch"
+
+  },
+  "permissions": {
+    "audio-capture": {
+      "description": "Audio capture"
+    },
+    "speech-recognition": {
+      "description": "Speech recognition"
+    }
+  },
+  "type": "privileged",
+  "author": "Kyle Robinson Young <kyle@dontkry.com> (http://dontkry.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "budo": "^4.1.0",
+    "watchify": "^3.11.1"
+
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "getusermedia": "^1.3.5",
+    "simple-peer": "^5.12.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Asto7/videochatasto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Asto7/videochatasto/issues"
+  },
+  "homepage": "https://github.com/Asto7/videochatasto#readme",
+  "description": ""
+}
