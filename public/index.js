@@ -2609,6 +2609,7 @@ module.exports = function (constraints, cb) {
     // treat lack of browser support like an error
     if (typeof navigator === 'undefined' || !navigator.getUserMedia) {
         // throw proper error per spec
+        console.log('IT IS NOT WORKING');
         error = new Error('MediaStreamError');
         error.name = 'NotSupportedError';
 
@@ -10473,7 +10474,7 @@ document.write('not works')
 
 
 
-
+console.log(navigator.getUserMedia);
 
 
 var message = document.querySelector('#messages');
