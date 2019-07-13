@@ -5,7 +5,6 @@
   "scripts": {
     "start": "node app.js",
     "watch": "npx watchify ./public/index.js -o ./public/bundle.js",
-    "postinstall":"npm run watch"
 
   },
   "permissions": {
