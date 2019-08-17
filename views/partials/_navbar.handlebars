@@ -1,0 +1,29 @@
+<nav style='display:flex; margin-top:10px; margin-bottom:10px; height:20%;'>
+
+<div style='float:left;  width:50%;'class="left">
+
+<ul style='list-style:none; display:flex;  justify-content:flex-start;'>
+  <li style='margin-right:3rem;' id='home'><a href='/' class='nav' style='cursor:pointer; text-decoration:none;'>HOME</a></li>
+  <li style='margin-right:3rem;' id='about'><a href='/about' class='nav' style='cursor:pointer; text-decoration:none;'>ABOUT</a></li>
+  {{#if user}}
+  <li style='margin-right:3rem;' id='chat'><a href='/peer/demo' class='nav' style='cursor:pointer; text-decoration:none;'>CHAT</a></li>
+  <li style='margin-right:3rem;' id='history'><a href='/peer/history' class='nav' style='cursor:pointer; text-decoration:none;'>Call History</a></li>
+{{/if}}
+</ul>
+
+</div>
+
+<div style='float:right; width:50%;' class="right">
+
+  <ul style='list-style:none; display:flex; justify-content:flex-end;'>
+{{#if user}}
+    <li style='margin-right:3rem;' id='logout'><a href='/users/logout' class='nav' style='cursor:pointer; text-decoration:none;'>LOGOUT</a></li>
+{{else}}
+   <li style='margin-right:3rem;' id='login'><a href='/users/login' class='nav' style='cursor:pointer; text-decoration:none;'>LOGIN</a></li>
+    <li style='margin-right:5rem;' id='register'><a href='/users/register' class='nav' style='cursor:pointer; text-decoration:none;' >REGISTER</a></li>
+{{/if}}
+  </ul>
+
+</div>
+
+</nav>

@@ -1,0 +1,14 @@
+<div id='a' class="card card-body">
+</div>
+<script type="text/javascript">
+function unescapeHTML(escapedHTML) {
+  return escapedHTML.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+}
+var x=unescapeHTML('{{chat}}');
+console.log(x);
+document.getElementById('a').innerHTML='<center><h2 style="word-spacing:5px; letter-spacing:1px;">History</h3></center>'+x;
+var a=document.getElementsByTagName('strong');
+for(var i=0;i<a.length;i++)
+{  a[i].style.color='blue';}
+</script>
+<script type="text/javascript">document.getElementById('history').className='in';</script>

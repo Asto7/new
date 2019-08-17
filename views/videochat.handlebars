@@ -1,0 +1,43 @@
+<div class="container-fluid">
+        <div class="row h-10 w-100">
+            <div class="col">
+      <center>            <select id="filter" style='width:50%;' class="  text-light ml-2 mt-2 select font-weight-bold border">
+                    <option value="none">Normal</option>
+                    <option value="brightness(170%)">Light</option>
+                    <option value="grayscale(100%)">B & W</option>
+                    <option value="sepia(100%)">Old School</option>
+                    <option value="blur(15px)">Blur</option>
+                    <option value="contrast(150%)">BlaCk Goku</option>
+                    <option value="invert(100%)">Dracula</option>
+                    <option value="hue-rotate(180deg">Beast</option>
+                    <option value="saturate(25)">Colour Full</option>
+                </select>
+            </center></div>
+
+        </div>
+        <div class="row h-90 w-100">
+            <div class="col-12 col-sm-6 d-flex justify-content-center">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <video class="embed-responsive-item" muted></video>
+                </div>
+            </div>
+
+
+            <div class="col-12 col-sm-6 d-flex justify-content-center">
+                <div id="peerDiv" class="embed-responsive embed-responsive-16by9">
+                </div>
+            </div>
+        </div>
+      </div>
+      <input type="hidden" id='me' name="me" value="{{me}}">
+<center><form id='light' style='margin:5px auto;'class="" action="/peer/endcall" method="post">
+  <input type="hidden" id='mate' name="mate" value="{{mate}}"/>
+  <input type="hidden" id='heavy' value="" name="heavy"/>
+
+  <span style='cursor:pointer;' id='fix' class="btn btn-primary">End Call</span>
+</form></center>
+<div id='results'>
+
+</div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/bundle.js"></script>

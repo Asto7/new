@@ -1,0 +1,49 @@
+body{margin:0;}
+.in{
+  border-bottom: 1px solid black;
+  font-weight:700;
+  text-shadow:.4px .4px;
+}
+#online{
+  padding: 2rem 1rem;
+margin-bottom: 2rem;
+background-color: #e9ecef;
+border-radius: .3rem;
+}
+nav{
+  margin-top: 0px;
+}
+#home,#about,#logout,#register,#login,.nav,#history,#chat{
+  letter-spacing: 2px;
+    color:grey;
+
+}
+#home:hover,#about:hover,#logout:hover,#register:hover,#login:hover,#history:hover,#chat:hover{
+  border-bottom: 1px solid black;
+
+}
+.select {
+  background-color: #007bff;
+    height: 30px;
+    margin:2px auto;
+}
+
+.h-90 {
+    height: 90% !important;
+}
+
+.h-10 {
+    height: 10% !important;
+}
+
+#peerVideo:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

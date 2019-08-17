@@ -1,0 +1,64 @@
+<div style='background-color:#2196F3;' class="alert ">
+
+  {{#each user}}
+  <div style="display:block;">
+
+  {{#ifCond this.online 'true'}}
+  <span style='height: 7px; width: 7px;  background-color: green;  border-radius: 50%;  display: inline-block;'></span>
+  {{else}}
+  <span style='height: 7px; width: 7px;  background-color: red;  border-radius: 50%;  display: inline-block;'></span>
+  {{/ifCond}}
+
+  <span onclick='appear()' style='margin-top:0px; margin-bottom:0px; color:white; cursor: pointer;display:inline; letter-spacing:1.5px;'>{{this.name}}</span>
+  </div>
+    {{/each}}
+
+</div>
+
+<form class="" action="/peer/videochat" id='L'method="post">
+  <input type='hidden' name="me"  id='me' value="{{me.name}}">
+  <input type='hidden' name="mate" id='mate' value="">
+</form>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+
+  function appear(){
+    document.getElementById('mate').value=event.target.innerHTML;
+            var script=document.createElement('script');
+            script.src='/main.js';
+          document.getElementsByTagName('body')[0].appendChild(script);
+          document.getElementsByClassName("container")[0].innerHTML+='<div id="mario-chat"><h2 style="display:inline;">'+event.target.innerHTML.toUpperCase()+'</h2><i class="fa fa-video-camera" aria-hidden="true"></i><div id="chat-window"><div id="output"></div><div id="feedback"></div></div><input value="{{me.name}}" id="handle" type="hidden"  placeholder="Handle" /><input id="message" type="text" placeholder="Message" /><button id="send">Send</button></div>';
+
+//request
+document.getElementsByClassName('fa-video-camera')[0].addEventListener('click',()=>{
+    var name='{{me.name}}';
+    socket.emit('request',{name:name});
+})}
+
+</script>
+
+<script type="text/javascript">document.getElementById('chat').className='in';</script>
+
+<script type="text/javascript">
+var socket = io.connect('http://localhost:4000');
+socket.on('chat', function(data){
+if(!document.getElementById('mario-chat')){
+            var script=document.createElement('script');
+            script.src='/main.js';
+          document.getElementsByTagName('body')[0].appendChild(script);
+          document.getElementsByClassName("container")[0].innerHTML+='<div id="mario-chat"><h2 style="display:inline;">'+data.handle.toUpperCase()+'</h2><i  class="fa fa-video-camera" aria-hidden="true"></i><div id="chat-window"><div id="output"></div><div id="feedback"></div></div><input id="handle" value="{{me.name}}" type="hidden" placeholder="Handle" /><input id="message" type="text" placeholder="Message" /><button id="send">Send</button></div>';
+          feedback.innerHTML = '';
+          output.innerHTML += '<p><strong>' + data.handle + ': </strong>' + data.message + '</p>';
+document.getElementById('mate').value=data.handle;
+        //request
+        document.getElementsByClassName('fa-video-camera')[0].addEventListener('click',()=>{
+            var name1='{{me.name}}';
+            socket.emit('request',{name:name1});
+  })
+      }
+
+});
+
+</script>

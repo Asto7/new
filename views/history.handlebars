@@ -1,0 +1,10 @@
+{{#each kira}}
+  <div class="card card-body mb-2">
+    <h4><span style="color:blue;">With-</span> {{mate}}</h4>
+    <p ><span style='color:crimson;'>Call Time:</span> {{creationDate}}</p>
+    <a class="btn btn-dark btn-block mb-2" href="/peer/visit/{{id}}">View</a>
+    </div>
+{{else}}
+  <p>No Call History!!!</p>
+{{/each}}
+<script type="text/javascript">document.getElementById('history').className='in';</script>
